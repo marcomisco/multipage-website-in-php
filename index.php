@@ -27,7 +27,7 @@
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="objectReparee">
                         <img src="" alt="">
                         <p></p>
                         <p>
