@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- link css style sheet -->
     <link rel="stylesheet" href="style.css">
-    <title>Hello, world!</title>
+    <title>Repair cafée Schaerbeek</title>
   </head>
   <body>
       <?php 
@@ -18,15 +18,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    <div class="navigationSiteFr">
+                    <!-- <div class="navigationSiteFr">
                         <ul class="mt-5">
                             <li> <a href="index.php">Acceuil</a></li>
                             <li><a href="#">Media</a></li>
-                            <li><a href="#">Vos Questions</a></li>
+                            <li><a href="#">faq</a></li>
                             <li><a href="#">Nous soutenir</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                     <div class="objectReparee">
                         <img src="" alt="">
                         <p></p>
@@ -61,8 +61,10 @@
                         Nous recherchons des bénévoles, en particulier pour l'atelier vélo. Contactez-nous.
                     </p>
                     <a href="https://www.youtube.com/watch?v=_lWIAb-DW1c">Reportage vidéo Alternatiba</a>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_lWIAb-DW1c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
+                    <div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_lWIAb-DW1c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>    
             </div>
         </div>
 

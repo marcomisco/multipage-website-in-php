@@ -11,7 +11,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container-fluid footer">
+    <div class="container-fluid" id="footer">
         <div class="row">
             <div class="col-6">
                 <p>
