@@ -74,8 +74,8 @@ header {
 
 .sidenav {
     height: 100%;
-    width: 160px;
-    position: fixed;
+    width: 100%;
+    /* position: fixed; */
     z-index: 1;
     top: 0;
     left: 0;
@@ -112,7 +112,7 @@ header {
 }
 
 .banniereDuSite img {
-	width: 80%;
+	width: 50%;
 }
 
 
@@ -126,6 +126,7 @@ header {
 	background-color: rgba(0, 0, 255, 0.329);
 	width: 80%;
 	border-radius: 20px;
+	align-items: center;
 }
 
 #footer p {
@@ -136,6 +137,7 @@ header {
 
 * h3 {
 	background-color: rgba(128, 128, 128, 0.418);
+	opacity: 0.9;
 }
 
 /* .navigationSiteFr li {
@@ -173,3 +175,16 @@ header {
 	font-weight: bold;
 	margin: 5px;
 } 
+
+/* contact form  */
+
+#formStyle {
+	border: 1px solid blue; 
+	border-radius: 10px;
+	box-shadow: #080505 2px 1px 3px 1px;
+	padding: 10px;
+	width: 100%;
+	margin: 10px;
+	display: block;
+	background-color: rgba(0, 0, 255, 0.377);
+}

@@ -17,10 +17,11 @@
       </div>
       <div class="container">
           <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-4">
+              <?php include('sidebar.php'); ?>
 
               </div>
-              <div class="col-md-10">
+              <div class="col-md-8">
                   <h3>Questions - Réponses</h3>
                   <h4>Qu'est-ce qu'un Repair Café ? Qui êtes-vous ?</h4>
                   <blockquote>

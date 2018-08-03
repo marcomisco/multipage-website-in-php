@@ -31,13 +31,13 @@
     <!-- bannière site + input recherche -->
     <div class="container">
         <div class="row bg-info">
-            <div class="col-6">
+            <div class="col-10">
                 <div class="banniereDuSite">
                     <img src="https://sites.google.com/site/repaircafeschaerbeek/_/rsrc/1467127355355/config/customLogo.gif?revision=2" alt="">
                 </div>
             </div>
-            <div class="col-6">
-                <div class="rechercheDuSite">
+            <div class="col-2">
+                <!-- <div class="rechercheDuSite">
                 <form id="sites-searchbox-form" action="/site/repaircafeschaerbeek/system/app/pages/search" role="search">
                     <input type="hidden" id="sites-searchbox-scope" name="scope" value="search-site">
                     <input type="text" id="jot-ui-searchInput" name="q" size="20" value="" aria-label="Rechercher dans ce site">
@@ -45,7 +45,7 @@
                         <div role="button" id="sites-searchbox-search-button" class="goog-inline-block jfk-button jfk-button-standard" tabindex="0" style="user-select: none;">Rechercher dans ce site</div>
                     </div>
                 </form>
-                </div>
+                </div> -->
                 <div class="vide">
 
                 </div>
@@ -54,7 +54,7 @@
     </div>
 
     <!-- navigation du site  -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-md-2">
                 <div class="sidenav">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -11,11 +11,14 @@
     <title>Hello, world!</title>
   </head>
   <body>
-        <?php include('header.php'); ?>
+      <?php include('header.php'); ?>
+      <div class="container">
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-10">
-                <form action="form.php" method="post">
+            <div class="col-md-4">
+            <?php include('sidebar.php'); ?>
+            </div>>
+            <div class="col-md-5">
+                <!-- <form action="form.php" method="post" id="formStyle">
                     titre   <input type="radio" name="title" id=""> Mme <input type="radio" name="" id=""> Melle <input type="radio" name="" id=""> Mr <br/>
                     nom     <input type="text" name="lastName"> <br/>
                     prénom  <input type="text" name="firstName" id=""> <br/>
@@ -26,10 +29,99 @@
                                 <option value="info">renseignements</option>
                                 <option value="other">Autres</option>
                             </select>
-                </form>
+                    votre messsage <input type="text" name="yourMsg" id=""> <br/>
+                    documents <input type="file" name="fileToUpload" id="fileToUpload"> <br/>
+                    format de réponse souhaité: HTML <input type="radio" name="" id=""> Texte <input type="radio" name="" id=""> <br/>
+                    envoyé <input type="submit" value="">
+                </form> -->
+            <div id="formStyle">
+              <h4 class="title">Formulaire</h4>
+              <form action="contact.php" >
+                <input type="radio" name="gender" value="male" checked> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+                <br/>
+                <!-- firstname -->
+                <label for="mail">Firstname :</label>
+                <br/>
+                <input type="text" name="firstname" value="">
+                <br/>
+                <!-- lastname -->
+                <label for="mail">Lastname :</label>
+                <br/>
+                <input type="text" name="lastname" value="">
+                <br/>
+                <!-- email -->
+                <label for="mail">e-mail :</label>
+                <br/>
+                <input type="email" id="mail" name="user_mail">
+                <br/>
+                <!-- message -->
+                <label for="msg">Message :</label>
+                <br/>
+                <textarea id="msg" name="user_message"></textarea>
+                <br/>
+                <!-- motifs -->
+                <label for="Motifs">Motifs:</label>
+                <br/>
+                <!-- carform -->
+                <select name="objet" form="carform">
+                  <option value="Demande d'info">Demande d'info</option>
+                  <option value="Inscription">Inscription</option>
+                  <option value="Nouvelles idée">Nouvelles idée</option>
+                </select>
+                <br/>
+                <br/>
+
+                <label for="doc">Documents :</label>
+                <br/>
+                <input type="file" action ="upload.php"name="image_field" id="icone"/>
+                <br />
+                <label for="icone">(JPG, PNG ou GIF)</label>
+                <br />
+
+                <label for="msg">Message :</label>
+                <br/>
+                <input type="radio" name="gender" value="Html" checked> Html
+                <input type="radio" name="gender" value="text"> text
+                <br/>
+                <button type="submit" form="nameform" name="submit" value="Submit">Contactez Moi</button>
+                <br/>
+                <br/>
+              </form>
+            </div>
           </div>
         </div>
+        <?php
+          // Afficher les erreurs à l'écran
+          ini_set('display_errors', 1);
+          // Enregistrer les erreurs dans un fichier de log
+          ini_set('log_errors', 1);
+          // Nom du fichier qui enregistre les logs (attention aux droits à l'écriture)
+          ini_set('error_log', dirname(__file__) . '/log_error_php.txt');
+          // Afficher les erreurs et les avertissements
+          // error_reporting(e_all);
+        ?>
+        <?php
+
+            $submit = $_POST('submit');
+            if (isset($submit)) {
+              $lastname = $_POST['lastname'];
+              $subject = $_POST['sujet'];
+              $firstsname = $_POST['firstname'];
+              $user_message = $_POST['user_message'];
+              $user_mail = $_POST['user_mail'];
+
+              $mailto = "nadir.medlle@gmail.com";
+              $headers = "email from ".$user_mail;
+              $txt = "You received an email from ".$lastname.' '.$firstname."\n\n".$user_message;
+
+              mail($mailto,$subject,$text,$headers);
+              header("Location: form.php?emailsend");
+            }
+        ?>
         <?php include('footer.php'); ?>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
