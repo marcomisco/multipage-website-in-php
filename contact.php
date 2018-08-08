@@ -11,116 +11,159 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    <?php
+      // Afficher les erreurs à l'écran
+      ini_set('display_errors', 1);
+      // Enregistrer les erreurs dans un fichier de log
+      ini_set('log_errors', 1);
+      // Nom du fichier qui enregistre les logs (attention aux droits à l'écriture)
+      ini_set('error_log', dirname(__file__) . '/log_error_php.txt');
+      // Afficher les erreurs et les avertissements
+      // error_reporting(e_all);
+    ?>    
+    <?php 
+      require('form.php');
+      // require_once('/upload.php');
+      // require('');
+      function remplir($i,$j,$button_submit){
+        if(!empty($i) AND !empty($j)){
+          return "<p style='color:black'>$i "." $j <p>";
+        } else {
+          return "<p style='color:red'>Veuillez remplir les champs précédents<p>";
+        }
+      }
+      function gender(){
+          global $gender;
+          if($gender !== false) {
+              return "<p style='color:black'>$gender<p>";
+          } else {
+              return "<p style='color:red'>Veuillez indiquer votre genre<p>";
+          }
+      }
+      function val_email(){
+          global $val_email;
+          if($val_email !== false) {
+              return "<p style='color:black'>$val_email<p>";
+          } else {
+              return "<p style='color:red'>Veuillez indiquer une adresse email valide<p>";
+          }
+      } 
+    ?>
+
+    <?php
+      
+      $target_dir = "uploads/";
+      $target_file = $target_dir . basename($_FILES["button-file"]["name"]);
+      $uploadOk = 1;
+      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+      // Check if image file is a actual image or fake image
+      if(isset($_POST["submit"])) {
+          $check = getimagesize($_FILES["button-file"]["tmp_name"]);
+          if($check !== false) {
+              echo "File is an image - " . $check["mime"] . ".";
+              $uploadOk = 1;
+          } else {
+              echo "File is not an image.";
+              $uploadOk = 0;
+          }
+      }
+      // Check if file already exists
+      if (file_exists($target_file)) {
+          echo "Sorry, file already exists.";
+          $uploadOk = 0;
+      }
+      // Check file size
+      if ($_FILES["fileToUpload"]["size"] > 500000) {
+          echo "Sorry, your file is too large.";
+          $uploadOk = 0;
+      }
+      // Allow certain file formats
+      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+      && $imageFileType != "gif" ) {
+          echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+          $uploadOk = 0;
+      }
+      // Check if $uploadOk is set to 0 by an error
+      if ($uploadOk == 0) {
+          echo "Sorry, your file was not uploaded.";
+      // if everything is ok, try to upload file
+      } else {
+          if (move_uploaded_file($_FILES["button-file"]["tmp_name"], $target_file)) {
+              echo "The file ". basename( $_FILES["button-file"]["name"]). " has been uploaded.";
+          } else {
+              echo "Sorry, there was an error uploading your file.";
+          }
+      }
+    ?>
       <?php include('header.php'); ?>
       <div class="container">
         <div class="row">
             <div class="col-md-4">
-            <?php include('sidebar.php'); ?>
+              <?php include('sidebar.php'); ?>
             </div>>
             <div class="col-md-5">
-                <!-- <form action="form.php" method="post" id="formStyle">
-                    titre   <input type="radio" name="title" id=""> Mme <input type="radio" name="" id=""> Melle <input type="radio" name="" id=""> Mr <br/>
-                    nom     <input type="text" name="lastName"> <br/>
-                    prénom  <input type="text" name="firstName" id=""> <br/>
-                    email   <input type="text" name="email" id=""><br/>
-                    object  <select name="contactSubject"><br/>
-                                <option value="questions">Questions</option>
-                                <option value="request">Demande de</option>
-                                <option value="info">renseignements</option>
-                                <option value="other">Autres</option>
-                            </select>
-                    votre messsage <input type="text" name="yourMsg" id=""> <br/>
-                    documents <input type="file" name="fileToUpload" id="fileToUpload"> <br/>
-                    format de réponse souhaité: HTML <input type="radio" name="" id=""> Texte <input type="radio" name="" id=""> <br/>
-                    envoyé <input type="submit" value="">
-                </form> -->
-            <div id="formStyle">
-              <h4 class="title">Formulaire</h4>
-              <form action="contact.php" >
-                <input type="radio" name="gender" value="male" checked> Male
-                <input type="radio" name="gender" value="female"> Female
-                <input type="radio" name="gender" value="other"> Other
-                <br/>
-                <!-- firstname -->
-                <label for="mail">Firstname :</label>
-                <br/>
-                <input type="text" name="firstname" value="">
-                <br/>
-                <!-- lastname -->
-                <label for="mail">Lastname :</label>
-                <br/>
-                <input type="text" name="lastname" value="">
-                <br/>
-                <!-- email -->
-                <label for="mail">e-mail :</label>
-                <br/>
-                <input type="email" id="mail" name="user_mail">
-                <br/>
-                <!-- message -->
-                <label for="msg">Message :</label>
-                <br/>
-                <textarea id="msg" name="user_message"></textarea>
-                <br/>
-                <!-- motifs -->
-                <label for="Motifs">Motifs:</label>
-                <br/>
-                <!-- carform -->
-                <select name="objet" form="carform">
-                  <option value="Demande d'info">Demande d'info</option>
-                  <option value="Inscription">Inscription</option>
-                  <option value="Nouvelles idée">Nouvelles idée</option>
-                </select>
-                <br/>
-                <br/>
-
-                <label for="doc">Documents :</label>
-                <br/>
-                <input type="file" action ="upload.php"name="image_field" id="icone"/>
-                <br />
-                <label for="icone">(JPG, PNG ou GIF)</label>
-                <br />
-
-                <label for="msg">Message :</label>
-                <br/>
-                <input type="radio" name="gender" value="Html" checked> Html
-                <input type="radio" name="gender" value="text"> text
-                <br/>
-                <button type="submit" form="nameform" name="submit" value="Submit">Contactez Moi</button>
-                <br/>
-                <br/>
-              </form>
-            </div>
+            <!-- POST METHOD -->
+            <form method="post" enctype='multipart/form-data' action="contact.php">
+              <div class="row">
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" name="lastname" placeholder="*Last name"/>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" name='firstname' placeholder="*First name" />
+                </div>
+              </div>
+              <?php if (isset($button_submit)) echo remplir($firstname,$lastname,$button_submit);?>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1" name="gender" class="custom-control-input" value="Monsieur">
+                <label class="custom-control-label" for="customRadioInline1">Homme</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline2" name="gender" class="custom-control-input" value="Madame">
+                <label class="custom-control-label" for="customRadioInline2">Femme</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline3" name="gender" class="custom-control-input" value="Sans mention" checked>
+                <label class="custom-control-label" for="customRadioInline3">Autres</label>
+              </div>
+              <?php echo gender() ?>
+              <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="*Enter email">
+              <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+              <?php echo val_email(); ?>
+              <select class="custom-select" name="object-list">
+                <option selected>Objet</option>
+                <option value="information">Informations</option>
+                <option value="inscription">Inscription</option>
+                <option value="administratif">Administratif</option>
+                <option value="other">Autre</option>
+              </select>
+              <br><br>
+              <div class="custom-file">
+                <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+                <input type="file" class="custom-file-input" id="customFile" name="button-file">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+                <?php if (isset($button_submit)) echo uploadImage(); ?>
+              </div>
+              <br> <br>
+              <div class="form-group">
+                <textarea class="form-control" rows="5" id="comment" name="message" placeholder="Message"></textarea>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline4" name="txt" value="html-txt" class="custom-control-input"checked>
+                <label class="custom-control-label" for="customRadioInline4">HTML</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline5" name="txt" value="texte-txt" class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline5">Texte</label>
+              </div>
+              <br> <br>
+              <button type="submit" name="submit" class="btn btn-primary">Envoyer</button>
+            </form>
           </div>
         </div>
-        <?php
-          // Afficher les erreurs à l'écran
-          ini_set('display_errors', 1);
-          // Enregistrer les erreurs dans un fichier de log
-          ini_set('log_errors', 1);
-          // Nom du fichier qui enregistre les logs (attention aux droits à l'écriture)
-          ini_set('error_log', dirname(__file__) . '/log_error_php.txt');
-          // Afficher les erreurs et les avertissements
-          // error_reporting(e_all);
-        ?>
-        <?php
 
-            $submit = $_POST('submit');
-            if (isset($submit)) {
-              $lastname = $_POST['lastname'];
-              $subject = $_POST['sujet'];
-              $firstsname = $_POST['firstname'];
-              $user_message = $_POST['user_message'];
-              $user_mail = $_POST['user_mail'];
+            <?php include('footer.php'); ?>
+ 
 
-              $mailto = "nadir.medlle@gmail.com";
-              $headers = "email from ".$user_mail;
-              $txt = "You received an email from ".$lastname.' '.$firstname."\n\n".$user_message;
-
-              mail($mailto,$subject,$text,$headers);
-              header("Location: form.php?emailsend");
-            }
-        ?>
-        <?php include('footer.php'); ?>
 
 
     <!-- Optional JavaScript -->
