@@ -12,9 +12,15 @@
 </head>
 
 <body>
+<div class="container">
+          <?php include('header.php'); ?>
+      </div>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-12">
+        <div class="col-4 col-md-4">
+              <?php include('sidebar.php'); ?>
+              </div>
+            <div class="col-8 col-md-8">
                 <h4 class="title">Le Repair Café Schaerbeek dans les médias</h4>
                 <p>Pour une demande de contact presse, <span>contactez-nous.</span></p>
             </div>
@@ -74,6 +80,7 @@
                 </ul>
             </div>
         </div>
+        <?php include('footer.php');?>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

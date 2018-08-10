@@ -12,9 +12,15 @@
 </head>
 
 <body>
+<div class="container">
+          <?php include('header.php'); ?>
+      </div>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-12">
+        <div class="col-4 col-md-4">
+              <?php include('sidebar.php'); ?>
+              </div>
+            <div class="col-8 col-md-8">
                 <h4 class="title">Comment nous soutenir ?</h4>
                 <p>Toute aide est toujours la bienvenue, en tant qu'expert réparateur, aide à l'organisation, à la traduction
                     néerlandaise et anglaise des textes. Si vous souhaitez être bénévole pour notre Repair Café, <span>contactez-nous</span>.
@@ -37,5 +43,5 @@
         </div>
     </div>
 </body>
-
+<?php include('footer.php');?>
 </html>

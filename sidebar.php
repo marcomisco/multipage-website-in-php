@@ -7,34 +7,23 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <title></title>
   </head>
   <body>
-    <div class="container-fluid" id="footer">
+    <!-- <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-4">
-                <p>
-                    2013-2015, Repair Café Schaerbeek <br/>
-                    <a href="https://sites.google.com/site/repaircafeschaerbeek/">Repair café Schaerbeek</a>
-                </p>
-            </div>
-            <div class="col-md-6 col-sm-8 ">
-                <div class="row">
-                    <div class="col-1">
-                        <img class="imgFooter mr-2" src="https://sites.google.com/site/repaircafeschaerbeek/_/rsrc/1467127360519/home/rbbk.jpg" alt="">
-                    </div>
-                    <div class="col-10 py-1 mx-2">
-                        <p>
-                            Fonds Celina Ramos de la fondation Roi Baudouin <br/>
-                            Fonds Celina Ramos van de Koning Boudewijnstichting <br/>
-                            Celina Ramos fund of the King Baudouin Foundation <br/>
-                        </p>
-                    </div>
+            <div class="col-md-2"> -->
+                <div class="sidenav">
+                    <a href="index.php">Acceuil</a>
+                    <a href="media.php">Media</a>
+                    <a href="faq.php">FAQ</a>
+                    <a href="NousSoutenir.php">Nous soutenir</a>
+                    <a href="contact.php">Contact</a>
                 </div>
-            </div>
-        </div>    
-    </div>
+            <!-- </div>
+        </div>
+    </div> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

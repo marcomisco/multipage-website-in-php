@@ -1,0 +1,193 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* css du site  */
+
+.navigationLangue li  {
+    display: inline;
+    text-decoration: none;
+}
+
+* body {
+	background-color: rgba(0, 0, 255, 0.233);
+}
+/* header nav bar langues */
+
+.navigationLangues li {
+	display: inline-flex; 
+	/* flex-direction: row;
+	justify-content: flex-end;	 */
+	padding: 0px 5px 0px 5px;
+	float: right;
+}
+
+.navigationLangues a:hover {
+	text-decoration: none;
+}
+
+header {
+	background-color: rgba(0, 0, 255, 0.233);
+}
+
+/* style de la navigation du site  */
+
+.sidenav {
+    height: 100%;
+    width: 100%;
+    /* position: fixed; */
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(8, 68, 179, 0.438);
+    overflow-x: hidden;
+	padding-top: 20px;
+	border-right: 2px solid blue;
+	border-radius: 10px;
+	/* box-shadow: rgba(0, 0, 255, 0.233) 10px 2px ; */
+	border:8px  white radius;
+	margin-top: 6px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #080505;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.banniereDuSite img {
+	width: 50%;
+}
+
+
+
+/* style footer */
+.imgFooter {
+	height: 100%;
+}
+
+#footer {
+	background-color: rgba(0, 0, 255, 0.329);
+	width: 80%;
+	border-radius: 20px;
+	align-items: center;
+}
+
+#footer p {
+	font-weight: bold;
+	size: 10px;
+	margin-left: 40px;
+}
+
+* h3 {
+	background-color: rgba(128, 128, 128, 0.418);
+	opacity: 0.9;
+}
+
+/* .navigationSiteFr li {
+	margin: 20px 0 20px	 0;
+	margin-left: 10px;
+} 
+
+.navigationSiteFr ul {
+	box-shadow: 5px 5px blue;
+	width: 60%;	
+}
+
+.navigationSiteFr a:hover {
+	text-decoration: none;
+}
+
+.objectReparee {
+	border: 5px solid blue;
+	padding: 2px;
+	width: 60%;
+} */
+
+/* style de la page faq */
+
+* blockquote {
+	border-left: 1px solid black;
+	padding-left: 20px;
+	margin: 30px;
+	font-style: italic;
+	
+}
+
+* h3 {
+	font-style: italic;
+	font-weight: bold;
+	margin: 5px;
+	margin-top:8px;
+} 
+
+/* contact form  */
+
+#formStyle {
+	border: 1px solid blue; 
+	border-radius: 10px;
+	box-shadow: #080505 2px 1px 3px 1px;
+	padding: 10px;
+	width: 100%;
+	margin: 10px;
+	display: block;
+	background-color: rgba(0, 0, 255, 0.377);
+}
