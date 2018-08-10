@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style2.css">
+    <link rel="stylesheet" href="style2.css">
     <title>Document</title>
 </head>
 
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-12 col-md-12">
                 <h4 class="title">Le Repair Café Schaerbeek dans les médias</h4>
-                <p>Pour une demande de contact presse, contactez-nous.</p>
+                <p>Pour une demande de contact presse, <span>contactez-nous.</span></p>
             </div>
         </div>
 
@@ -24,11 +24,11 @@
             <div class="col-12 col-md-5">
                 <h4 class="title">Presse écrite</h4>
                 <ul>
-                    <li>Un Repair Café à Schaerbeek !</li>
+                    <span><li>Un Repair Café à Schaerbeek !</li></span>
                     <p>Schaerbeek Info n°165, p6, 18 février 2013</p>
-                    <li>Yomiuri Shimbun (Journal Japonais)</li>
+                    <span><li>Yomiuri Shimbun (Journal Japonais)</li></span>
                     <p>28 octobre 2013</p>
-                    <li>C’est cassé ? Tant mieux !</li>
+                    <span><li>C’est cassé ? Tant mieux !</li></span>
                     <p>Schaerbeek Info n°181, p14, 18 novembre 2013</p>
                 </ul>
             </div>
@@ -47,31 +47,30 @@
             <div class="col-12 col-md-5">
                 <h4 class="title">Sur le web et blogs</h4>
                 <ul>
-                    <li>Ook Repair Cafés in Schaarbeek en Berchem</li>
+                    <span><li>Ook Repair Cafés in Schaarbeek en Berchem</li></span>
                     <p>Brusselsnieuws, 28 janvier 2013</p>
-                    <li>"Repairing is about independence"</li>
+                    <span><li>"Repairing is about independence"</li></span>
                     <p>I love meiser, 6 août 2013</p>
-                    <li>"Repair Café"- best café for economic crisis</li>
+                    <span<<li>"Repair Café"- best café for economic crisis</li></span>
                     <p>Bruksela pod lupą, 21 octobre 2013</p>
-                    <li>Le Repair café de Schaerbeek, vu de Pologne !</li>
+                    <span><li>Le Repair café de Schaerbeek, vu de Pologne !</li></span>
                     <p>I love meiser, 22 octobre 2013</p>
                 </ul>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-3">
 
                 <h4 class="title">Vidéos / Audiovisuel</h4>
                 <ul>
-                    <li>Kawiarnie Majsterkowiszów</li>
+                    <span><li>Kawiarnie Majsterkowiszów</li></span>
                     <p>Polsat TV, septembre 2013</p>
-                    <li>Le Repair Café Schaerbeek</li>
+                    <span><li>Le Repair Café Schaerbeek</li></span>
                     <p>Capsule du projet Dewey, Décembre 2013</p>
                 </ul>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4">
                 <h4 class="title">Publications Du Repair Café</h4>
                 <ul>
-                    <li>l'affiche du Repair Café Schaerbeek</li>
-
+                    <span><li>l'affiche du Repair Café Schaerbeek</li></span>
                 </ul>
             </div>
         </div>

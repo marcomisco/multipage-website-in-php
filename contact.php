@@ -48,7 +48,7 @@
       <!-- formulaire -->
       <div class="formulaire">
         <h4 class="title">Formulaire</h4>
-        <form action="">
+        <form action="form.php" method="post">
           <input type="radio" name="gender" value="male" checked> Male
           <input type="radio" name="gender" value="female"> Female
           <input type="radio" name="gender" value="other"> Other
@@ -77,7 +77,7 @@
           <label for="Motifs">Motifs:</label>
           <br>
           <!-- carform -->
-          <select name="objet" form="carform">
+          <select name="objet">
             <option value="Demande d'info">Demande d'info</option>
             <option value="Inscription">Inscription</option>
             <option value="Nouvelles idée">Nouvelles idée</option>

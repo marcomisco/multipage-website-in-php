@@ -1,0 +1,37 @@
+/* contact */
+
+body {
+    background-color: #79aad438;
+    
+    
+}
+
+.container {
+    padding: 22px;
+    font-family: serif;
+}
+
+.contact {
+    color: black;
+    padding: 4px;
+}
+
+.title {
+    color: whitesmoke;
+    border: 1px whitesmoke solid;
+    background-color: blueviolet;
+    padding: 6px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.image {
+    height: 60%;
+    width: 30%;
+    border-radius: 5px;
+    margin:1px;
+}
+span{
+    color: tomato;
+    text-decoration : underline;
+}

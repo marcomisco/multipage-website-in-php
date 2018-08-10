@@ -14,8 +14,9 @@ body {
 }
 
 .title {
-    color: blue;
+    color: rgb(170, 73, 73);
     border: 1px blue dotted;
+    background-color: #2f74f3;
 }
 
 .image {
